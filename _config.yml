@@ -1,6 +1,20 @@
+# The Site Configuration
+
+# Import the theme
+theme: jekyll-theme-chirpy
+
+# Language
+lang: en
+
+# Timezone
+timezone: Europe/Budapest
+
+# jekyll-seo-tag settings
 title: Balint Szabo
-tagline: Red team research and offensive security
-description: Red team research and offensive security
+tagline: Red Team Researcher & Malware Developer
+description: >-
+  Red team research, malware development, and offensive security.
+  Deep dives into EDR evasion, Windows internals, and adversary simulation.
 
 url: "https://bsdrip.github.io"
 
@@ -12,13 +26,154 @@ twitter:
 
 social:
   name: Balint Szabo
-  email: # leave blank or add one
+  email:
   links:
     - https://github.com/bsdrip
     - https://twitter.com/b2dr1p
 
+# Site Verification Settings
+webmaster_verifications:
+  google:
+  bing:
+  alexa:
+  yandex:
+  baidu:
+  facebook:
+
+# Web Analytics Settings
+analytics:
+  google:
+    id:
+  goatcounter:
+    id:
+  umami:
+    id:
+    domain:
+  matomo:
+    id:
+    domain:
+  cloudflare:
+    id:
+  fathom:
+    id:
+
+# Page views settings
+pageviews:
+  provider:
+
+# dark forces the dark theme permanently
 theme_mode: dark
 
-avatar: # path to a profile picture if you want one, e.g. /assets/img/avatar.jpg
+# CDN endpoint for media resources
+cdn:
 
-timezone: Europe/Budapest
+# Sidebar avatar - add a photo to assets/img/avatar.jpg if you want one
+avatar:
+
+# Social preview image for SEO
+social_preview_image:
+
+# Table of contents on by default for all posts
+toc: true
+
+comments:
+  provider:
+  disqus:
+    shortname:
+  utterances:
+    repo:
+    issue_term:
+  giscus:
+    repo:
+    repo_id:
+    category:
+    category_id:
+    mapping:
+    strict:
+    input_position:
+    lang:
+    reactions_enabled:
+
+assets:
+  self_host:
+    enabled:
+    env:
+
+pwa:
+  enabled: true
+  cache:
+    enabled: true
+    deny_paths:
+
+paginate: 10
+
+baseurl: ""
+
+# ------------ Do not modify below this line ------------
+
+kramdown:
+  footnote_backlink: "&#8617;&#xfe0e;"
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+collections:
+  tabs:
+    output: true
+    sort_by: order
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      comments: true
+      toc: true
+  - scope:
+      path: _drafts
+    values:
+      comments: false
+  - scope:
+      path: ""
+      type: tabs
+    values:
+      layout: page
+      permalink: /:title/
+
+sass:
+  style: compressed
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: false
+  blanklines: false
+  ignore:
+    envs: [development]
+
+exclude:
+  - "*.gem"
+  - "*.gemspec"
+  - docs
+  - tools
+  - README.md
+  - LICENSE
+  - purgecss.js
+  - "*.config.js"
+  - "package*.json"
+
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/
